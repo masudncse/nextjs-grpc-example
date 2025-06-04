@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package posts;
+
+service PostsService {
+  rpc GetPosts (GetPostsRequest) returns (PostsResponse) {}
+  rpc GetPost (GetPostRequest) returns (Post) {}
+}
+
+message GetPostsRequest {
+  int32 limit = 1;  // Optional limit for number of posts
+}
+
+message GetPostRequest {
+  int32 id = 1;  // Post ID
+}
+
+message Post {
+  int32 id = 1;
+  int32 userId = 2;
+  string title = 3;
+  string body = 4;
+}
+
+message PostsResponse {
+  repeated Post posts = 1;
+} 

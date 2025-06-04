@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import EnhancedVideoPlayer from '@/components/EnhancedVideoPlayer';
+import EnhancedVideoPlayer from '@/components/VideoPlayer';
 import Navigation from '@/components/Navigation';
 
 export default function VideoPage() {
