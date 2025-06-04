@@ -12,6 +12,7 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   defaults: true,
   oneofs: true,
 });
+
 const helloProto = grpc.loadPackageDefinition(packageDefinition).hello as any;
 
 export async function POST(req: NextRequest) {
@@ -22,6 +23,7 @@ export async function POST(req: NextRequest) {
       'localhost:50051',
       grpc.credentials.createInsecure()
     );
+
     client.SayHello({ name }, (err: any, response: any) => {
       if (err) {
         resolve(NextResponse.json({ error: err.message }, { status: 500 }));
