@@ -3,7 +3,6 @@ syntax = "proto3";
 package video;
 
 service VideoService {
-  // Stream video chunks to the client
   rpc StreamVideo (VideoRequest) returns (stream VideoChunk) {}
 }
 
